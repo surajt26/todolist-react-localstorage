@@ -1,0 +1,14 @@
+.edit-icon,
+.delete-icon {
+  display: none;
+}
+
+.change-edit-icon:hover > .edit-outlined-icon,
+.change-delete-icon:hover > .delete-outline-icon {
+  display: none;
+}
+
+.change-edit-icon:hover > .edit-icon,
+.change-delete-icon:hover > .delete-icon {
+  display: inline-block;
+}
