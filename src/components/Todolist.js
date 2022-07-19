@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import AddNewItem from './AddNewItem';
 import ItemList from './ItemList';
-
+import UpdateInput from './UpdateInput';
 
 const Todolist = () => {
 
@@ -56,7 +56,13 @@ const Todolist = () => {
                     />
                 </div>
             </div>
-
+            {/* Update Input Component */}
+            <UpdateInput
+                taskList={taskList}
+                setTaskList={setTaskList}
+                selectedTask={selectedTask}
+                setSelectedTask={setSelectedTask}
+            />
         </div>
     </>)
 }
