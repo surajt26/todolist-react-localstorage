@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Header from './Header';
 
 const Todolist = () => {
 
@@ -30,6 +31,8 @@ const Todolist = () => {
             >
                 <div className='col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4
                     mx-auto my-auto border rounded shadow'>
+                    {/* Header Component */}
+                    <Header />
 
                 </div>
             </div>
