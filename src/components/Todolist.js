@@ -8,7 +8,9 @@ const Todolist = () => {
 
     // Task list to store all task
     const [taskList, setTaskList] = useState(['Dates', 'Coconuts', 'Bananas', 'Apples']);
-    console.log(taskList);
+
+    // Function to setTaskList from localStorage
+    const getList = () => setTaskList(JSON.parse(localStorage.getItem('taskList')));
 
     useEffect(() => {
         // Getting taskList from localStorage
@@ -47,11 +49,11 @@ const Todolist = () => {
                     <AddNewItem
                         taskList={taskList}
                         setTaskList={setTaskList}
+                        getList={getList}
                     />
                     {/* Item List Component */}
                     <ItemList
                         taskList={taskList}
-                        setTaskList={setTaskList}
                         setSelectedTask={setSelectedTask}
                     />
                 </div>

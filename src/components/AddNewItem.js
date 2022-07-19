@@ -12,7 +12,7 @@ const btnWidth = { width: '100%' };
 const AddNewItem = (props) => {
 
     // object destructuring of props
-    const { taskList, setTaskList } = props;
+    const { taskList, getList } = props;
 
     // useState for store new task
     const [task, setTask] = useState('');
@@ -24,7 +24,8 @@ const AddNewItem = (props) => {
         // Trim all white space from both side
         const trimUpdateTask = task.trim();
         if (trimUpdateTask !== '') {
-            setTaskList([trimUpdateTask, ...taskList]);
+            localStorage.setItem('taskList', JSON.stringify([trimUpdateTask, ...taskList]));
+            getList();
             setTask('');
         }
     }
@@ -33,7 +34,8 @@ const AddNewItem = (props) => {
     const removeAllHandle = (e) => {
         // Stop default event behaviour
         e.preventDefault();
-        setTaskList([]);
+        localStorage.setItem('taskList', JSON.stringify([]));
+        getList();
     }
 
     return (<>
