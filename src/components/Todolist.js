@@ -55,6 +55,7 @@ const Todolist = () => {
                     <ItemList
                         taskList={taskList}
                         setSelectedTask={setSelectedTask}
+                        getList={getList}
                     />
                 </div>
             </div>

@@ -8,7 +8,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const ItemList = (props) => {
 
     // object destructuring of props
-    const { taskList, setTaskList, setSelectedTask } = props;
+    const { taskList, setSelectedTask, getList } = props;
 
     // Task select action handle
     const selectHandle = (task, taskId) => {
@@ -26,7 +26,8 @@ const ItemList = (props) => {
         const updatedTaskList = taskList.filter((value) => {
             return value !== task
         });
-        setTaskList(updatedTaskList);
+        localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
+        getList();
     }
 
     return (<>
