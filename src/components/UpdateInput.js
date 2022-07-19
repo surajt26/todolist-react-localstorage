@@ -12,7 +12,7 @@ const btnWidth = { width: '100%' };
 const UpdateInput = (props) => {
 
     // object destructuring of props
-    const { taskList, setTaskList, selectedTask, setSelectedTask } = props;
+    const { taskList, selectedTask, setSelectedTask, getList } = props;
 
     let tempTaskList = taskList;
 
@@ -31,7 +31,8 @@ const UpdateInput = (props) => {
         const trimUpdateText = updateText.trim();
         if ((selectedTask !== null) && (trimUpdateText !== "")) {
             tempTaskList[selectedTask.taskId] = trimUpdateText;
-            setTaskList(tempTaskList);
+            localStorage.setItem('taskList', JSON.stringify(tempTaskList));
+            getList();
             setSelectedTask({
                 task: '',
                 taskId: null

@@ -48,7 +48,6 @@ const Todolist = () => {
                     {/* Add New Item Component */}
                     <AddNewItem
                         taskList={taskList}
-                        setTaskList={setTaskList}
                         getList={getList}
                     />
                     {/* Item List Component */}
@@ -62,9 +61,9 @@ const Todolist = () => {
             {/* Update Input Component */}
             <UpdateInput
                 taskList={taskList}
-                setTaskList={setTaskList}
                 selectedTask={selectedTask}
                 setSelectedTask={setSelectedTask}
+                getList={getList}
             />
         </div>
     </>)
