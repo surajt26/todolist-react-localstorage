@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import AddNewItem from './AddNewItem';
+import ItemList from './ItemList';
+
 
 const Todolist = () => {
 
     // Task list to store all task
     const [taskList, setTaskList] = useState(['Dates', 'Coconuts', 'Bananas', 'Apples']);
+    console.log(taskList);
 
     useEffect(() => {
         // Getting taskList from localStorage
@@ -21,7 +24,11 @@ const Todolist = () => {
         // eslint-disable-next-line
     }, [])
 
-    
+    // Selected task to store task and their id
+    const [selectedTask, setSelectedTask] = useState({
+        task: '',
+        taskId: null
+    });
 
     return (<>
         <div className='container position-relative'>
@@ -41,10 +48,15 @@ const Todolist = () => {
                         taskList={taskList}
                         setTaskList={setTaskList}
                     />
-                    
+                    {/* Item List Component */}
+                    <ItemList
+                        taskList={taskList}
+                        setTaskList={setTaskList}
+                        setSelectedTask={setSelectedTask}
+                    />
                 </div>
             </div>
-            
+
         </div>
     </>)
 }
