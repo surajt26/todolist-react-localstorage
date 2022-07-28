@@ -125,6 +125,7 @@ npm start
 
 - localStorage is a property that allows JavaScript sites and apps to save key-value pairs in a web browser with no expiration date.
 - This means the data stored in the browser will persist even after the browser window is closed.
+<br />
 
 <h3 id="npm"><a href="https://www.npmjs.com/">NPM</a></h3>
 
